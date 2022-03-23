@@ -7,7 +7,15 @@ public class CrowdSpawner : MonoBehaviour
     [SerializeField] private GameObject pingwinPrefab;
     private GameObject _player;
     private List<Transform> pointSpawn;
-    
+    private float countPointSpawn;
+
+    public static CrowdSpawner Instance;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     void Start()
     {
         InputController.Instance.endHold += EndDraw;
@@ -30,6 +38,8 @@ public class CrowdSpawner : MonoBehaviour
                 }
             }
         }
+
+        countPointSpawn = pointSpawn.Count;
         
         SpawnCrowd();
     }
@@ -42,6 +52,19 @@ public class CrowdSpawner : MonoBehaviour
             pingwin.transform.position = point.position;
             pingwin.transform.rotation = point.rotation;
             pingwin.transform.SetParent(point);
+        }
+        StartGameSystem.Instance.StartGame();
+    }
+
+    public void KilledCreature()
+    {
+        if (countPointSpawn > 0)
+        {
+            --countPointSpawn;
+        }
+        else
+        {
+            LoseSystem.Instance.Lose();
         }
     }
     

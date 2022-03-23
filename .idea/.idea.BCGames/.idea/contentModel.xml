@@ -224,13 +224,20 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="Components" t="Include">
+            <e p="Finish.cs" t="Include" />
             <e p="Player" t="Include">
-              <e p="PlayerMovements.cs" t="Include" />
+              <e p="PointMovement.cs" t="Include" />
             </e>
           </e>
           <e p="system" t="Include">
             <e p="CrowdSystem" t="Include">
               <e p="CrowdSpawner.cs" t="Include" />
+            </e>
+            <e p="GameSystem" t="Include">
+              <e p="CameraController.cs" t="Include" />
+              <e p="LoseSystem.cs" t="Include" />
+              <e p="StartGameSystem.cs" t="Include" />
+              <e p="WinSystem.cs" t="Include" />
             </e>
             <e p="InputSystem" t="Include">
               <e p="DrawLineController.cs" t="Include" />
