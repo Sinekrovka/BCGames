@@ -2,17 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBarrel : MonoBehaviour
+public class EnemyBarrel : MonoBehaviour, IInteractiveEnemy
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private GameObject destroyParticle;
+    public void Interacte()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        GameObject particle = Instantiate(destroyParticle);
+        particle.transform.position = transform.position;
+        Destroy(particle, 1.5f);
+        Destroy(gameObject);
     }
 }

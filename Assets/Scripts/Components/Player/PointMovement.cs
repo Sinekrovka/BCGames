@@ -15,5 +15,10 @@ public class PointMovement : MonoBehaviour
             Destroy(gameObject);
             CrowdSpawner.Instance.KilledCreature();
         }
+        
+        if (other.CompareTag("InteractiveEnemy"))
+        {
+            other.GetComponent<IInteractiveEnemy>().Interacte();
+        }
     }
 }

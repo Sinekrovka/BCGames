@@ -224,10 +224,15 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="Components" t="Include">
+            <e p="EnemyBarrel.cs" t="Include" />
+            <e p="EnemyButton.cs" t="Include" />
             <e p="Finish.cs" t="Include" />
             <e p="Player" t="Include">
               <e p="PointMovement.cs" t="Include" />
             </e>
+          </e>
+          <e p="Core" t="Include">
+            <e p="IInteractiveEnemy.cs" t="Include" />
           </e>
           <e p="system" t="Include">
             <e p="CrowdSystem" t="Include">
