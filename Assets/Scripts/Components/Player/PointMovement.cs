@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class PointMovement : MonoBehaviour
@@ -24,6 +25,6 @@ public class PointMovement : MonoBehaviour
         particle.transform.position = transform.position;
         Destroy(particle, 1.5f);
         Destroy(gameObject);
-        CrowdSpawner.Instance.KilledCreature();
+        CrowdSpawner.Instance.KilledCreature(transform);
     }
 }

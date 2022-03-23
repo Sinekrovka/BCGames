@@ -57,16 +57,35 @@ public class CrowdSpawner : MonoBehaviour
         StartGameSystem.Instance.StartGame();
     }
 
-    public void KilledCreature()
+    public void KilledCreature(Transform obj)
     {
         if (countPointSpawn > 0)
         {
             --countPointSpawn;
+            pointSpawn.Remove(obj);
         }
         else
         {
             LoseSystem.Instance.Lose();
             _player.GetComponent<SplineFollower>().enabled = false;
+        }
+    }
+
+    public void AddCreature()
+    {
+        for (int i = _player.transform.childCount - 1; i > -1; --i)
+        {
+            if (!pointSpawn.Contains(_player.transform.GetChild(i)))
+            {
+                Transform point = _player.transform.GetChild(i);
+                pointSpawn.Add(point);
+                GameObject pingwin = Instantiate(pingwinPrefab);
+                pingwin.transform.position = point.position;
+                pingwin.transform.rotation = point.rotation;
+                pingwin.transform.SetParent(point);
+                countPointSpawn = pointSpawn.Count;
+                break;
+            }
         }
     }
     

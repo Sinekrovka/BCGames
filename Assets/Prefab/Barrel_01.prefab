@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 3057846043011239811}
   - component: {fileID: 975963421186210633}
   - component: {fileID: 5935137964185781633}
+  - component: {fileID: 6143853230586509420}
+  - component: {fileID: 8868574709934454929}
   m_Layer: 0
   m_Name: Barrel_01
   m_TagString: Enemy
@@ -97,3 +99,29 @@ CapsuleCollider:
   m_Height: 0.007
   m_Direction: 1
   m_Center: {x: 0, y: 0.0030524605, z: -1.1641532e-10}
+--- !u!135 &6143853230586509420
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624583404533815964}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.005
+  m_Center: {x: 0, y: 0.0030524605, z: -1.1641532e-10}
+--- !u!114 &8868574709934454929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624583404533815964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b03061e10b9d11f41a43ce0db790ebbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyParticle: {fileID: 1503314963399906, guid: b179a4b6ccaf1ad459bbd10cfc2e1ca4, type: 3}

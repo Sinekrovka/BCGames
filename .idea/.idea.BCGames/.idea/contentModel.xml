@@ -242,6 +242,7 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="Components" t="Include">
+            <e p="AddCreatures.cs" t="Include" />
             <e p="EnemyBarrel.cs" t="Include" />
             <e p="EnemyButton.cs" t="Include" />
             <e p="Finish.cs" t="Include" />
