@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Dreamteck.Splines;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -65,6 +66,7 @@ public class CrowdSpawner : MonoBehaviour
         else
         {
             LoseSystem.Instance.Lose();
+            _player.GetComponent<SplineFollower>().enabled = false;
         }
     }
     

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Dreamteck.Splines;
 using UnityEngine;
 
 public class Finish : MonoBehaviour
@@ -9,6 +10,7 @@ public class Finish : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             WinSystem.Instance.Win();
+            other.GetComponent<SplineFollower>().enabled = false;
         }
     }
 }

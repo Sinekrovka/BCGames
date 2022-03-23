@@ -9,16 +9,21 @@ public class PointMovement : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            GameObject particle = Instantiate(blood);
-            particle.transform.position = transform.position;
-            Destroy(particle, 1.5f);
-            Destroy(gameObject);
-            CrowdSpawner.Instance.KilledCreature();
+            Killed();
         }
         
         if (other.CompareTag("InteractiveEnemy"))
         {
-            other.GetComponent<IInteractiveEnemy>().Interacte();
+            other.GetComponent<IInteractiveEnemy>().Interacte(transform);
         }
+    }
+
+    public void Killed()
+    {
+        GameObject particle = Instantiate(blood);
+        particle.transform.position = transform.position;
+        Destroy(particle, 1.5f);
+        Destroy(gameObject);
+        CrowdSpawner.Instance.KilledCreature();
     }
 }

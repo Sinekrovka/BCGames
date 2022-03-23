@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IInteractiveEnemy
 {
-    void Interacte();
+    void Interacte(Transform objectTransform);
 }
